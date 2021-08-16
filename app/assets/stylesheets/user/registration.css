@@ -14,6 +14,11 @@
   padding-bottom: 70px;
   position: relative;
 }
+.form-wrap a{
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bold;
+}
 
 .form-header {
   width: 100%;
