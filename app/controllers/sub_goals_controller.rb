@@ -23,6 +23,12 @@ class SubGoalsController < ApplicationController
       render :edit
     end
   end
+  def destroy
+    @main_goal = MainGoal.find(params[:main_goal_id])
+    @sub_goal = SubGoal.find(params[:id])
+    @sub_goal.destroy
+    redirect_to main_goal_path(current_user.id)
+  end
   private
   def params_sub_goal
     params.require(:sub_goal).permit(:sub_goal, :dead_line).merge(user_id: current_user.id, main_goal_id: params[:main_goal_id])
