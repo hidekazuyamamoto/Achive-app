@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_16_234551) do
+ActiveRecord::Schema.define(version: 2021_08_17_053433) do
 
   create_table "main_goals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(version: 2021_08_16_234551) do
     t.date "dead_line"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_main_goals_on_user_id"
+  end
+
+  create_table "sub_goals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "sub_goal"
+    t.date "dead_line"
+    t.bigint "user_id"
+    t.bigint "main_goal_id"
+    t.index ["main_goal_id"], name: "index_sub_goals_on_main_goal_id"
+    t.index ["user_id"], name: "index_sub_goals_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -36,4 +47,6 @@ ActiveRecord::Schema.define(version: 2021_08_16_234551) do
   end
 
   add_foreign_key "main_goals", "users"
+  add_foreign_key "sub_goals", "main_goals"
+  add_foreign_key "sub_goals", "users"
 end
