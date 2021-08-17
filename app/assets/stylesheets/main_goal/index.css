@@ -127,24 +127,29 @@
   background-color: lemonchiffon;
 }
 .sub-goals-contents{
-  width: 90%;
+  width: 100%;
   background-color: lightcoral;
   margin:0 0 0 auto ;
   padding-top:5px ;
 }
 
 .sub-goal{
-  font-size: 30px;
-  font-weight: 900;
   display: flex;
   margin-bottom: 5px;
   justify-content: space-between;
 }
+.sub-goal-edit{
+  padding-top:10px ;
+}
 .sub-goal-name{
   width: 70%;
+  font-weight: 900;
+  font-size: 30px;
 }
-
-.sub-goals-contents a{
+.sub-goal-limit{
+  font-size: 25px;
+}
+#sub-goal-add-btn{
   font-size: 30px;
   display: block;
   text-align: center;
