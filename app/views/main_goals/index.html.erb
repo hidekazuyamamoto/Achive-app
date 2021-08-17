@@ -1,53 +1,52 @@
-<div>
-  <div class="header">
-    <div class="left-header">
-      <%= link_to "Achive", root_path, class:"title-name" %>
+<div class="header">
+  <div class="left-header">
+    <%= link_to "Achive", root_path, class:"title-name" %>
+  </div>
+  <div class="center-header">
+    <div class="search">
+      <form class="search-form">
+        <input type="text" placeholder="名前で検索" class="name-form">
+        <input type="submit" value="検索" class="send">
+      </form>
     </div>
-    <div class="center-header">
-      <div class="search">
-        <form class="search-form">
-          <input type="text" placeholder="名前で検索" class="name-form">
-          <input type="submit" value="検索" class="send">
-        </form>
+  </div>
+  <div class="right-header">
+      <% if user_signed_in? %>
+      <div class="right-header-left">
+        <%= link_to 'マイページ' %>
       </div>
-    </div>
-    <div class="right-header">
-        <% if user_signed_in? %>
-        <div class="right-header-left">
-          <%= link_to 'マイページ' %>
-        </div>
-        <div class="right-header-right">
-          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-        </div>
-        <% else %>
-        <div class="right-header-left">
-          <%= link_to '新規登録',  new_user_registration_path %>
-        </div>
-        <div class="right-header-right">
-          <%= link_to 'ログイン',  new_user_session_path %>
-        </div>
-        <% end %>
-    </div>
+      <div class="right-header-right">
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+      </div>
+      <% else %>
+      <div class="right-header-left">
+        <%= link_to '新規登録',  new_user_registration_path %>
+      </div>
+      <div class="right-header-right">
+        <%= link_to 'ログイン',  new_user_session_path %>
+      </div>
+      <% end %>
   </div>
-  <div class="main">
-    <% if user_signed_in?%>
-      <% if @main_goal.present?%>
-      <%else%>
-        <h1 class="message">さぁ目標を決めよう！！</h1>
-        <div class="goal-set">
-          <%=link_to "目標を設定する", new_main_goal_path %>
-        </div>
-      <%end%>
+</div>
+<%# ここまでがヘッダーです。完成したら部分テンプレートにする。 %>
+<div class="main">
+  <% if user_signed_in?%>
+    <% if @main_goal.present?%>
     <%else%>
-      <h1 class="message">ログインして仲間になろう！！</h1>
+      <h1 class="message">さぁ目標を決めよう！！</h1>
+      <div class="goal-set">
+        <%=link_to "目標を設定する", new_main_goal_path %>
+      </div>
     <%end%>
-  </div>
+  <%else%>
+    <h1 class="message">ログインして仲間になろう！！</h1>
+  <%end%>
+</div>
 
-  <div class="others">
-    <p>他の人の目標を見る</p>
-  </div>
-
-  <div class="footer">
-    <p>提供</p>
-  </div>
+<div class="others">
+  <p>他の人の目標を見る</p>
+</div>
+<%# ここからがフッター。完成したら部分テンプレートに %>
+<div class="footer">
+  <p>提供</p>
 </div>
