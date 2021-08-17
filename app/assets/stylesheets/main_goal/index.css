@@ -79,8 +79,71 @@
 }
 .main{
   width: 100%;
-  height: 80vh;
   background-color: rgb(240, 226, 209);
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.goal{
+  border: 3px solid black;
+  height: 400px;
+  width: 90%;
+  margin:0 auto 20px;
+  background-color: darkcyan;
+  display: flex;
+}
+.goal-content{
+  height: 90%;
+  width: 70%;
+  margin: 20px;
+  background-color: royalblue;
+}
+.main-goal-name{
+  height: 20%;
+  width: 95%;
+  margin: 20px;
+  background-color: orchid;
+  
+}
+.main-goal-name h1{
+  margin: 0px;
+  font-size: 45px;
+  text-align: center;
+}
+.main-goal-explnation{
+  height: 60%;
+  width: 95%;
+  margin: 20px;
+  background-color:khaki;
+  
+}
+.main-goal-explnation p{
+  display: block;
+  margin: 0 auto;
+  font-size: 30px;
+  height: 95%;
+  width: 99%;
+  overflow-wrap: break-word;
+}
+.limit{
+  height: 40%;
+  width: 30%;
+  background-color: orange;
+  margin: 20px;
+}
+.goal-limit{
+  height: 90%;
+  width: 90%;
+  margin: 10px auto;
+  background-color: blue;
+}
+.goal-limit h2{
+  margin: 0px;
+  font-size: 30px;
+}
+.goal-limit h1{
+  font-size: 40px;
+  text-align: center;
+  margin: 0px
 }
 .message{
   margin-top: 0px;
