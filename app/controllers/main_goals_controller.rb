@@ -20,7 +20,8 @@ class MainGoalsController < ApplicationController
     @main_goal = MainGoal.find(params[:id])
   end
   def update
-    if MainGoal.update(main_goal_params)
+    @main_goal = MainGoal.find(params[:id])
+    if @main_goal.update(main_goal_params)
       redirect_to  main_goal_path(current_user.id)
     else
       render :edit
