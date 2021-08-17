@@ -1,0 +1,40 @@
+.goal-edit{
+  height: 50px;
+  width: 90%;
+  margin:0 auto ;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+}
+.edit{
+  height: 100%;
+  width: 15%;
+  background-color: tomato;
+}
+.edit a{
+  display: block;
+  height: 95%;
+  width: 95%;
+  font-size: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 1px auto;
+  font-weight: 900;
+  color: black;
+}
+.destroy{
+  height: 100%;
+  width: 15%;
+  background-color: turquoise;
+}
+.destroy a{
+  display: block;
+  height: 95%;
+  width: 95%;
+  font-size: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 1px auto;
+  font-weight: 900;
+  color: black;
+}

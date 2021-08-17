@@ -1,36 +1,5 @@
 <%= render "shared/header" %>
-<div class="main">
-  <% if user_signed_in?%>
-    <% if @main_goal.present?%>
-      <% @main_goal.each do |goal| %>
-        <div class="goal">
-          <div class="goal-content">
-            <div class="main-goal-name">
-            <h1><%= goal.main_goal %></h1>
-            </div>
-            <div class="main-goal-explnation ">
-            <p><%= goal.explnation %></p>
-            </div>
-          </div>
-          <div class="limit">
-            <div class="goal-limit">
-            <h2>残り</h2>
-            <h1><%= "#{(goal.dead_line - Date.today).to_i}日！！" %> </h1>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    <%else%>
-      <h1 class="message">さぁ目標を決めよう！！</h1>
-      <div class="goal-set">
-        <%=link_to "目標を設定する", new_main_goal_path %>
-      </div>
-    <%end%>
-  <%else%>
-    <h1 class="message">ログインして仲間になろう！！</h1>
-  <%end%>
-</div>
-
+<%= render partial: "shared/main", locals: { main_goal: @main_goal } %>
 <div class="others">
   <p>他の人の目標を見る</p>
 </div>

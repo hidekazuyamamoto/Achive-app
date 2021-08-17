@@ -13,7 +13,7 @@
   <div class="right-header">
       <% if user_signed_in? %>
       <div class="right-header-left">
-        <%= link_to 'マイページ' %>
+        <%= link_to 'マイページ', main_goal_path(current_user.id) %>
       </div>
       <div class="right-header-right">
         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
