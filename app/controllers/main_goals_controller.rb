@@ -1,4 +1,5 @@
 class MainGoalsController < ApplicationController
+  before_action :main_goal_set, only: [:edit, :update, :destroy]
   def index
     @main_goal = MainGoal.where(user_id: current_user.id)
   end
@@ -17,18 +18,15 @@ class MainGoalsController < ApplicationController
     @main_goal = MainGoal.where(user_id: params[:id])
   end
   def edit
-    @main_goal = MainGoal.find(params[:id])
   end
   def update
-    @main_goal = MainGoal.find(params[:id])
     if @main_goal.update(main_goal_params)
-      redirect_to  main_goal_path(current_user.id)
+      redirect_to main_goal_path(current_user.id)
     else
       render :edit
     end
   end
   def destroy
-    @main_goal = MainGoal.find(params[:id])
     @main_goal.destroy
     redirect_to main_goal_path(current_user.id)
   end
@@ -36,4 +34,7 @@ class MainGoalsController < ApplicationController
   def main_goal_params
     params.require(:main_goal).permit(:main_goal, :explnation, :dead_line).merge(user_id: current_user.id)
   end 
+  def main_goal_set
+    @main_goal = MainGoal.find(params[:id])
+  end
 end
