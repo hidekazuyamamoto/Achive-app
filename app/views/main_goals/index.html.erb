@@ -38,14 +38,14 @@
             <div class="main-goal-name">
             <h1><%= goal.main_goal %></h1>
             </div>
-            <div class="main-goal-explnation">
+            <div class="main-goal-explnation ">
             <p><%= goal.explnation %></p>
             </div>
           </div>
           <div class="limit">
             <div class="goal-limit">
             <h2>残り</h2>
-            <h1><%= goal.dead_line %> </h1>
+            <h1><%= "#{(goal.dead_line - Date.today).to_i}日！！" %> </h1>
             </div>
           </div>
         </div>
