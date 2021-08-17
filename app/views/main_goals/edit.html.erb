@@ -1,0 +1,24 @@
+<%= render "shared/header" %>
+<div class="main">
+  <div class= new-main>
+    <%=form_with model: @main_goal, local:true do |f|%>
+      <p>目標</p>
+      <div class="main-goal">
+        <%= f.text_area :main_goal, placeholder:"目標を書こう！！", class:"input-form name"%>
+      </div>
+      <p>説明</p>
+      <div class="main-goal">
+        <%= f.text_area :explnation, placeholder:"目標について詳しく！！", class:"input-form explanation"%>
+      </div>
+      <p>締め切り</p>
+      <p><span>(右のアイコンをクリック)</span></p>
+      <div class="main-goal">
+        <%= f.date_field :dead_line, class:"input-form dead-line"%>
+      </div>
+      <div class="main-goal">
+      <%= f.submit "目標設定！！" ,class:"set-btn" %>
+      </div>
+    <%end%>
+  </div>
+</div>
+<%= render "shared/footer" %>
