@@ -1,6 +1,20 @@
 <%= render "shared/header" %>
 <div class="main">
   <% if user_signed_in?%>
+  <div class="profiles">
+    <div class="user-profiles">
+      <div class="user-image">
+      </div>
+      <div class="user-profile">
+      </div>
+    </div>
+    <div class="user-goal">
+      <div class="life-goal">
+      </div>
+      <div class="life-goal-explanation">
+      </div>
+    </div>
+  </div>
     <% if @main_goal.present?%>
       <% @main_goal.each do |goal| %>
         <div class="goal-edit">
