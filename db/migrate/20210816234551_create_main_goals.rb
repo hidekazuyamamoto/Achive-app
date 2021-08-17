@@ -4,7 +4,7 @@ class CreateMainGoals < ActiveRecord::Migration[6.0]
 
       t.timestamps
       t.string :main_goal, nill: false
-      t.text :explanation
+      t.text :explnation
       t.date :dead_line
       t.references :user, nill:false, foreign_key: true
     end
