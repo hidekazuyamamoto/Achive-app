@@ -23,6 +23,9 @@
               <div class="sub-goals-contents">
                 <%@sub_goal.each do |sub_goal|%>
                   <div class="sub-goal">
+                    <div class="sub-goal-edit">
+                      <%= link_to "編集する", edit_main_goal_sub_goal_path(goal.id, sub_goal.id)%> 
+                    </div>
                     <div class="sub-goal-name">
                       <%= sub_goal.sub_goal %>
                     </div>
@@ -31,7 +34,7 @@
                     </div>
                   </div>
                 <% end %>
-                <%=link_to "サブ目標を追加する", new_main_goal_sub_goal_path(goal.id)%>
+                <%=link_to "サブ目標を追加する", new_main_goal_sub_goal_path(goal.id), id:"sub-goal-add-btn"%>
               </div>
             </div>
           </div>

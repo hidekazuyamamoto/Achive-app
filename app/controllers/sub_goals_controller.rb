@@ -3,12 +3,24 @@ class SubGoalsController < ApplicationController
     @sub_goal =SubGoal.new
   end
   def create
-    binding.pry
     @sub_goal =SubGoal.new(params_sub_goal)
     if @sub_goal.save
       redirect_to main_goal_path(current_user.id)
     else
       render :new
+    end
+  end
+  def edit
+    @main_goal = MainGoal.find(params[:main_goal_id])
+    @sub_goal = SubGoal.find(params[:id])
+  end
+  def update
+    @main_goal = MainGoal.find(params[:main_goal_id])
+    @sub_goal = SubGoal.find(params[:id])
+    if @sub_goal.update(params_sub_goal)
+      redirect_to main_goal_path(current_user.id)
+    else
+      render :edit
     end
   end
   private
