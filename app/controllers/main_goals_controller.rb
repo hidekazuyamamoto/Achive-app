@@ -16,6 +16,9 @@ class MainGoalsController < ApplicationController
   def show
     @main_goal = MainGoal.where(user_id: params[:id])
   end
+  def edit
+    @main_goal = MainGoal.find(params[:id])
+  end
   private
   def main_goal_params
     params.require(:main_goal).permit(:main_goal, :explnation, :dead_line).merge(user_id: current_user.id)
