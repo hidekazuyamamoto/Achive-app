@@ -11,7 +11,8 @@
       <div class="main-goal">
         <%= f.date_field :dead_line, class:"input-form dead-line"%>
       </div>
-      <div class="main-goal">
+      <div class="sub-goal-set-btn">
+      <%=link_to "削除する",  main_goal_sub_goal_path(@main_goal, @sub_goal),id:"destroy-btn",method: :delete%>
       <%= f.submit "目標設定！！" ,class:"set-btn" %>
       </div>
     <%end%>

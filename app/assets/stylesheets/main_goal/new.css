@@ -36,6 +36,23 @@
 .dead-line{
   font-size: 30px;
 }
+.sub-goal-set-btn{
+  display: flex;
+}
+#destroy-btn{
+  display: block;
+  width: 30%;
+  height: 50px;
+  margin: 0 auto;
+  display: block;
+  font-size: 30px;
+  font-weight: 900;
+  color: black;
+  text-decoration: none;
+  border: 1px solid black;
+  background-color: gray;
+  text-align: center;
+}
 .set-btn{
   width: 30%;
   height: 50px;
