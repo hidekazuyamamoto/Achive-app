@@ -5,7 +5,7 @@
       <% @main_goal.each do |goal| %>
         <div class="goal-edit">
           <div class="edit">
-            <%= link_to "編集する", edit_main_goal_path(main_goal.id) %>
+            <%= link_to "編集する", edit_main_goal_path(goal.id) %>
           </div>
           <div class="destroy">
             <a href="#">消去する</a>
