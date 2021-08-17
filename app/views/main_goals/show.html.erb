@@ -8,7 +8,7 @@
             <%= link_to "編集する", edit_main_goal_path(goal.id) %>
           </div>
           <div class="destroy">
-            <a href="#">消去する</a>
+            <%= link_to "削除する", main_goal_path(goal.id), method: :delete %>
           </div>
         </div>
         <div class="goal">

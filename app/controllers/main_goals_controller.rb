@@ -27,6 +27,11 @@ class MainGoalsController < ApplicationController
       render :edit
     end
   end
+  def destroy
+    @main_goal = MainGoal.find(params[:id])
+    @main_goal.destroy
+    redirect_to main_goal_path(current_user.id)
+  end
   private
   def main_goal_params
     params.require(:main_goal).permit(:main_goal, :explnation, :dead_line).merge(user_id: current_user.id)
