@@ -123,6 +123,31 @@
   width: 99%;
   overflow-wrap: break-word;
 }
+.sub-goals{
+  width: 100%;
+  background-color: lemonchiffon;
+}
+.sub-goals-contents{
+  width: 90%;
+  background-color: lightcoral;
+  margin:0 0 0 auto ;
+}
+.sub-goals-contents ul{
+  margin: 0px;
+}
+.sub-goals-contents li{
+font-size: 30px;
+font-weight: 900;
+}
+.sub-goals-contents a{
+  font-size: 30px;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid black;
+  margin: 0 230px ;
+  background-color: gray;
+}
 .limit{
   height: 40%;
   width: 30%;

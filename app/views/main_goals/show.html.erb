@@ -19,6 +19,16 @@
             <div class="main-goal-explnation ">
             <p><%= goal.explnation %></p>
             </div>
+            <div class="sub-goals">
+              <div class="sub-goals-contents">
+                <ul>
+                  <li>test1</li>
+                  <li>test2</li>
+                  <li>test3</li>
+                </ul>
+                <a href="#">サブ目標を追加する</a>
+              </div>
+            </div>
           </div>
           <div class="limit">
             <div class="goal-limit">
@@ -27,6 +37,7 @@
             </div>
           </div>
         </div>
+        <%#if @sub_goals.present? %>
       <% end %>
     <%else%>
       <h1 class="message">さぁ目標を決めよう！！</h1>
