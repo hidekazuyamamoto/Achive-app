@@ -1,16 +1,7 @@
-<%= render "shared/header" %>
 <div class="main">
   <% if user_signed_in?%>
-    <% if @main_goal.present?%>
-      <% @main_goal.each do |goal| %>
-        <div class="goal-edit">
-          <div class="edit">
-            <a href="#">編集する</a>
-          </div>
-          <div class="destroy">
-            <a href="#">消去する</a>
-          </div>
-        </div>
+    <% if main_goal.present?%>
+      <% main_goal.each do |goal| %>
         <div class="goal">
           <div class="goal-content">
             <div class="main-goal-name">
@@ -38,4 +29,3 @@
     <h1 class="message">ログインして仲間になろう！！</h1>
   <%end%>
 </div>
-<%= render "shared/footer" %>
