@@ -22,9 +22,11 @@
             <div class="sub-goals">
               <div class="sub-goals-contents">
                 <ul>
-                  <li>test1</li>
-                  <li>test2</li>
-                  <li>test3</li>
+                <%@sub_goal.each do |sub_goal|%>
+                  <li>
+                  <%= sub_goal.sub_goal %>
+                  </li>
+                <% end %>
                 </ul>
                 <%=link_to "サブ目標を追加する", new_main_goal_sub_goal_path(goal.id)%>
               </div>
@@ -37,7 +39,6 @@
             </div>
           </div>
         </div>
-        <%#if @sub_goals.present? %>
       <% end %>
     <%else%>
       <h1 class="message">さぁ目標を決めよう！！</h1>
