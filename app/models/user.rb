@@ -4,5 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :main_goals
+  has_many :sub_goals
   validates :name, presence: true
 end
