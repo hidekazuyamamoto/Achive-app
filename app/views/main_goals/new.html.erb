@@ -1,34 +1,4 @@
-<div class="header">
-  <div class="left-header">
-    <%= link_to "Achive", root_path, class:"title-name" %>
-  </div>
-  <div class="center-header">
-    <div class="search">
-      <form class="search-form">
-        <input type="text" placeholder="名前で検索" class="name-form">
-        <input type="submit" value="検索" class="send">
-      </form>
-    </div>
-  </div>
-  <div class="right-header">
-      <% if user_signed_in? %>
-      <div class="right-header-left">
-        <%= link_to 'マイページ' %>
-      </div>
-      <div class="right-header-right">
-        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-      </div>
-      <% else %>
-      <div class="right-header-left">
-        <%= link_to '新規登録',  new_user_registration_path %>
-      </div>
-      <div class="right-header-right">
-        <%= link_to 'ログイン',  new_user_session_path %>
-      </div>
-      <% end %>
-  </div>
-</div>
-<%# ここまでがヘッダーです。完成したら部分テンプレートにする。 %>
+<%= render "shared/header" %>
 <div class="main">
   <div class= new-main>
     <%=form_with model: @main_goal, local:true do |f|%>
@@ -52,6 +22,4 @@
   </div>
 </div>
 <%# ここからがフッター。完成したら部分テンプレートに %>
-<div class="footer">
-  <p>提供</p>
-</div>
+<%= render "shared/footer" %>
