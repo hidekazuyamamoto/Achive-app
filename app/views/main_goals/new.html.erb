@@ -28,6 +28,25 @@
       <% end %>
   </div>
 </div>
+<%# ここまでがヘッダーです。完成したら部分テンプレートにする。 %>
+<div class= new-main>
+  <%=form_with model: @main_goal, local:true do |f|%>
+    <p>目標</p>
+    <div class="main-goal name">
+      <%= f.text_area :main_goal, placeholder:"目標を書こう！！"%>
+    </div>
+    <p>説明</p>
+    <div class="main-goal explanation">
+      <%= f.text_area :exlanation, placeholder:"目標について詳しく！！"%>
+    </div>
+    <p>締め切り</p>
+    <div class="main-goal dead-line">
+      <%= f.date_field :dead_line%>
+    </div>
+    <%= f.submit "目標設定！！" ,class:"sell-btn" %>
+  <%end%>
+</div>
+<%# ここからがフッター。完成したら部分テンプレートに %>
 <div class="footer">
   <p>提供</p>
 </div>
