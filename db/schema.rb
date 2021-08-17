@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2021_08_16_234551) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "main_goal"
     t.text "explanation"
+    t.date "dead_line"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_main_goals_on_user_id"
   end
