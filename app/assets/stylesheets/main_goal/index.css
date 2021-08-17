@@ -140,6 +140,11 @@
 }
 .sub-goal-edit{
   padding-top:10px ;
+  padding-left: 10px;
+}
+.sub-goal-edit a{
+  text-decoration: none;
+  font-weight: 600;
 }
 .sub-goal-name{
   width: 70%;
