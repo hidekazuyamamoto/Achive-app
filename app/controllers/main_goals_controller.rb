@@ -2,6 +2,7 @@ class MainGoalsController < ApplicationController
   before_action :main_goal_set, only: [:edit, :update, :destroy]
   def index
     @main_goal = MainGoal.where(user_id: current_user.id)
+    @sub_goal = SubGoal.where(main_goal: @main_goal.ids)
   end
   def new
     @main_goal = MainGoal.new
@@ -16,6 +17,7 @@ class MainGoalsController < ApplicationController
   end
   def show
     @main_goal = MainGoal.where(user_id: params[:id])
+    @sub_goal = SubGoal.where(main_goal: @main_goal.ids)
   end
   def edit
   end

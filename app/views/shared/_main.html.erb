@@ -5,10 +5,24 @@
         <div class="goal">
           <div class="goal-content">
             <div class="main-goal-name">
-            <h1><%= goal.main_goal %></h1>
+              <h1><%= goal.main_goal %></h1>
             </div>
             <div class="main-goal-explnation ">
-            <p><%= goal.explnation %></p>
+              <p><%= goal.explnation %></p>
+            </div>
+            <div class="sub-goals">
+              <div class="sub-goals-contents">
+                <%sub_goal.each do |sub_goal|%>
+                  <div class="sub-goal">
+                    <div class="sub-goal-name">
+                      <%= sub_goal.sub_goal %>
+                    </div>
+                    <div class="sub-goal-limit">
+                      <%= "残り#{(sub_goal.dead_line-Date.today).to_i}日！！"%>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
             </div>
           </div>
           <div class="limit">
