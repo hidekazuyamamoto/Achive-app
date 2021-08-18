@@ -4,4 +4,5 @@ Rails.application.routes.draw do
     resources :sub_goals
   end
   root to: "main_goals#index"
+  resources :profiles
 end
