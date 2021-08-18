@@ -2,17 +2,22 @@
 <div class="main">
   <% if user_signed_in?%>
   <div class="profiles">
-    <div class="user-profiles">
-      <div class="user-image">
+    <div class="profile">
+      <div class="user-profiles">
+        <div class="user-image">
+        </div>
+        <div class="user-profile">
+        </div>
       </div>
-      <div class="user-profile">
+      <div class="user-goal">
+        <div class="life-goal">
+        </div>
+        <div class="life-goal-explanation">
+        </div>
       </div>
     </div>
-    <div class="user-goal">
-      <div class="life-goal">
-      </div>
-      <div class="life-goal-explanation">
-      </div>
+    <div class="profile-edit">
+      <a href="#">プロフィールを編集する</a>
     </div>
   </div>
     <% if @main_goal.present?%>

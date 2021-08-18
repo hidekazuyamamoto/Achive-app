@@ -1,13 +1,16 @@
 .profiles{
-  height: 400px;
+  height: 500px;
   width: 90%;
   margin: 10px auto;
   background-color: rgb(185, 169, 197);
+}
+.profile{
+  height: 450px;
   display: flex;
 }
 .user-profiles{
   width: 25%;
-  height: 90%;
+  height: 95%;
   background-color: rgb(49, 49, 95);
   margin: 15px;
 }
@@ -25,7 +28,7 @@
 }
 .user-goal{
   width: 70%;
-  height: 90%;
+  height: 95%;
   background-color: rgb(193, 212, 173);
   margin: 15px;
 }
@@ -40,6 +43,17 @@
   width: 95%;
   margin: 0 auto;
   background-color: rgb(193, 226, 215);
+}
+.profile-edit{
+  height: 8%;
+  background-color: rgb(212, 160, 193);
+  text-align: right;
+  padding: 5px;
+  font-size: 25px;
+}
+.profile-edit a{
+  text-decoration: none;
+  border: 1px solid black;
 }
 .goal-edit{
   height: 50px;
