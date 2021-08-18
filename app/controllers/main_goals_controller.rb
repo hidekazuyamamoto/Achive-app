@@ -20,6 +20,7 @@ class MainGoalsController < ApplicationController
   def show
     @main_goal = MainGoal.where(user_id: params[:id])
     @sub_goal = SubGoal.where(main_goal: @main_goal.ids)
+    @profile = Profile.where(user_id: params[:id])
   end
   def edit
   end
