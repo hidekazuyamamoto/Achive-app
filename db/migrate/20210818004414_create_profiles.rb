@@ -7,6 +7,7 @@ class CreateProfiles < ActiveRecord::Migration[6.0]
       t.text :life_goal_explanation
       t.text :profile
       t.references :user, nill: false, foreign_key: true
+      t.string :user, null: false
     end
   end
 end
