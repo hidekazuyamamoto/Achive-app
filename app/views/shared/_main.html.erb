@@ -18,7 +18,7 @@
                       <%= sub_goal.sub_goal %>
                     </div>
                     <div class="sub-goal-limit">
-                      <%= "残り#{(sub_goal.dead_line-Date.today).to_i}日！！"%>
+                      <%= "残り#{sub_goal.dead_line}日！！"%>
                     </div>
                   </div>
                 <% end %>
@@ -28,7 +28,7 @@
           <div class="limit">
             <div class="goal-limit">
             <h2>残り</h2>
-            <h1><%= "#{(goal.dead_line - Date.today).to_i}日！！" %> </h1>
+            <h1><%= "#{goal.dead_line}日！！" %> </h1>
             </div>
           </div>
         </div>
