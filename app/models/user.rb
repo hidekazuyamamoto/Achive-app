@@ -7,5 +7,4 @@ class User < ApplicationRecord
   has_many :main_goals, dependent: :destroy
   has_many :sub_goals, dependent: :destroy
   has_one :profile, dependent: :destroy
-  validates :user, presence: true
 end
