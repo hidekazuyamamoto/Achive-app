@@ -49,6 +49,8 @@ ActiveRecord::Schema.define(version: 2021_08_18_004414) do
     t.string "life_goal"
     t.text "life_goal_explanation"
     t.text "profile"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "sub_goals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -77,6 +79,7 @@ ActiveRecord::Schema.define(version: 2021_08_18_004414) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "main_goals", "users"
+  add_foreign_key "profiles", "users"
   add_foreign_key "sub_goals", "main_goals"
   add_foreign_key "sub_goals", "users"
 end
