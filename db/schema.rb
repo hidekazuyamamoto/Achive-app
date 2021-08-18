@@ -43,16 +43,6 @@ ActiveRecord::Schema.define(version: 2021_08_17_232028) do
     t.index ["user_id"], name: "index_main_goals_on_user_id"
   end
 
-  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id"
-    t.text "profile"
-    t.string "life_goal"
-    t.text "life_goal_explanation"
-    t.index ["user_id"], name: "index_profiles_on_user_id"
-  end
-
   create_table "sub_goals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -79,7 +69,6 @@ ActiveRecord::Schema.define(version: 2021_08_17_232028) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "main_goals", "users"
-  add_foreign_key "profiles", "users"
   add_foreign_key "sub_goals", "main_goals"
   add_foreign_key "sub_goals", "users"
 end
