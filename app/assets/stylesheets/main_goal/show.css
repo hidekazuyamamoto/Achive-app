@@ -1,3 +1,60 @@
+.profiles{
+  height: 500px;
+  width: 90%;
+  margin: 10px auto;
+  background-color: rgb(185, 169, 197);
+}
+.profile{
+  height: 450px;
+  display: flex;
+}
+.user-profiles{
+  width: 25%;
+  height: 95%;
+  background-color: rgb(49, 49, 95);
+  margin: 15px;
+}
+.user-image{
+  height: 60%;
+  width: 95%;
+  margin: 10px auto;
+  background-color: lightcyan;
+}
+.user-profile{
+  height: 30%;
+  width: 95%;
+  margin: 10px auto;
+  background-color: lightslategrey;
+}
+.user-goal{
+  width: 70%;
+  height: 95%;
+  background-color: rgb(193, 212, 173);
+  margin: 15px;
+}
+.life-goal{
+  height: 45%;
+  width: 95%;
+  margin: 10px auto;
+  background-color: rgb(200, 157, 157);
+}
+.life-goal-explanation{
+  height: 45%;
+  width: 95%;
+  margin: 0 auto;
+  background-color: rgb(193, 226, 215);
+}
+.profile-edit{
+  height: 8%;
+  background-color: rgb(212, 160, 193);
+  text-align: right;
+  padding: 5px;
+  font-size: 25px;
+}
+.profile-edit a{
+  text-decoration: none;
+  border: 1px solid black;
+}
 .goal-edit{
   height: 50px;
   width: 90%;

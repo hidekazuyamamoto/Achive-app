@@ -1,0 +1,31 @@
+<%= render "shared/header" %>
+<div class="main">
+  <div class= new-main>
+    <%=form_with model: @profile, local:true do |f|%>
+      <p>名前</p>
+      <div class="main-goal">
+        <%= f.text_area :name, class:"input-form name", maxlength:"40" %>
+      </div>
+      <p>プロフィール画像</p>
+      <div class="main-goal">
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+      <p>人生の目標</p>
+      <div class="main-goal">
+        <%= f.text_area :life_goal, placeholder:"目標を書こう！！", class:"input-form name"%>
+      </div>
+      <p>説明</p>
+      <div class="main-goal">
+        <%= f.text_area :life_goal_explanation, placeholder:"目標について詳しく！！", class:"input-form explanation"%>
+      </div>
+      <p>プロフィール</p>
+      <div class="main-goal">
+        <%= f.text_area :profile, class:"input-form explanation"%>
+      </div>
+      <div class="main-goal">
+      <%= f.submit "プロフィール設定！！" ,class:"set-btn-profile" %>
+      </div>
+    <%end%>
+  </div>
+</div>
+<%= render "shared/footer" %>
