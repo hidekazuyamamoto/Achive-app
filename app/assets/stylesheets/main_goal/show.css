@@ -1,11 +1,9 @@
 .profiles{
-  height: 500px;
   width: 90%;
   margin: 10px auto;
   background-color: rgb(185, 169, 197);
 }
 .profile{
-  height: 450px;
   display: flex;
 }
 .user-profiles{
@@ -14,17 +12,30 @@
   background-color: rgb(49, 49, 95);
   margin: 15px;
 }
+.profile-content{
+  font-size: 20px;
+}
 .user-image{
   height: 60%;
   width: 95%;
   margin: 10px auto;
   background-color: lightcyan;
 }
+.image{
+  height: 150px;
+  width: 150px;
+  margin: 50px 70px 0px;
+}
+.user-name{
+  margin: 0;
+  margin-left: 115px;
+}
 .user-profile{
   height: 30%;
   width: 95%;
   margin: 10px auto;
   background-color: lightslategrey;
+  overflow-wrap:break-word;
 }
 .user-goal{
   width: 70%;
@@ -37,12 +48,21 @@
   width: 95%;
   margin: 10px auto;
   background-color: rgb(200, 157, 157);
+  overflow-wrap:break-word;
+}
+.life-goal-content{
+  font-size: 60px;
+  margin: 0px;
+  text-align: center;
 }
 .life-goal-explanation{
   height: 45%;
   width: 95%;
   margin: 0 auto;
   background-color: rgb(193, 226, 215);
+}
+.life-goal-explanation-content{
+  font-size: 20px;
 }
 .profile-edit{
   height: 8%;
