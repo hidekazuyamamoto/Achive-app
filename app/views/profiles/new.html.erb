@@ -2,17 +2,14 @@
 <div class="main">
   <div class= new-main>
     <%=form_with model: @profile, local:true do |f|%>
-    <div class="img-upload">
-      <div class="weight-bold-text">
-        商品画像
+      <p>名前</p>
+      <div class="main-goal">
+        <%= f.text_area :user, class:"input-form name", maxlength:"40" %>
       </div>
-      <div class="click-upload">
-        <p>
-          クリックしてファイルをアップロード
-        </p>
+      <p>プロフィール画像</p>
+      <div class="main-goal">
         <%= f.file_field :image, id:"item-image" %>
       </div>
-    </div>
       <p>人生の目標</p>
       <div class="main-goal">
         <%= f.text_area :life_goal, placeholder:"目標を書こう！！", class:"input-form name"%>
@@ -26,7 +23,7 @@
         <%= f.text_area :profile, class:"input-form explanation"%>
       </div>
       <div class="main-goal">
-      <%= f.submit "プロフィール設定！！" ,class:"set-btn" %>
+      <%= f.submit "プロフィール設定！！" ,class:"set-btn-profile" %>
       </div>
     <%end%>
   </div>
