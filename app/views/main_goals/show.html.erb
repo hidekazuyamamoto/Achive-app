@@ -1,78 +1,126 @@
 <%= render "shared/header" %>
 <div class="main">
   <% if user_signed_in?%>
-  <div class="profiles">
-    <div class="profile">
-      <div class="user-profiles">
-        <div class="user-image">
+    <% if @profile.present? %>
+      <div class="profiles">
+        <div class="profile">
+          <div class="user-profiles">
+            <div class="user-image">
+            <%if @profile.image.attached?%>
+            <%= image_tag @profile.image, class: 'image'%>
+            <%else%>
+            <%= image_tag "sample.png", class: 'image'%>
+            <%end%>
+            <h1 class="user-name"><%= @profile.name%></h1>
+            </div>
+            <div class="user-profile">
+              <p class="profile-content">
+              <%= @profile.profile%>
+              </p>
+            </div>
+          </div>
+          <div class="user-goal">
+            <div class="life-goal">
+              <h1 class="life-goal-content">
+              <%= @profile.life_goal%>
+              </h1>
+            </div>
+            <div class="life-goal-explanation">
+              <p class="life-goal-explanation-content">
+              <%= @profile.life_goal_explanation%>
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="user-profile">
+        <div class="profile-edit">
+          <%= link_to "プロフィールを編集する",new_profile_path %> 
         </div>
       </div>
-      <div class="user-goal">
-        <div class="life-goal">
+    <% else %>
+      <div class="profiles">
+        <div class="profile">
+          <div class="user-profiles">
+            <div class="user-image">
+            <%= image_tag "sample.png", class: 'image'%>
+            <h1 class="user-name">プロフィール編集で名前を入れよう！</h1>
+            </div>
+            <div class="user-profile">
+              <p class="profile-content">
+              自己紹介を書こう！！
+              </p>
+            </div>
+          </div>
+          <div class="user-goal">
+            <div class="life-goal">
+              <h1 class="life-goal-content">
+              人生の目標を決めよう！！
+              </h1>
+            </div>
+            <div class="life-goal-explanation">
+              <p class="life-goal-explanation-content">
+              詳しく教えて！！
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="life-goal-explanation">
+        <div class="profile-edit">
+          <%= link_to "プロフィールを編集する",new_profile_path %> 
         </div>
       </div>
-    </div>
-    <div class="profile-edit">
-      <%= link_to "プロフィールを編集する",new_profile_path %> 
-    </div>
-  </div>
-    <% if @main_goal.present?%>
-      <% @main_goal.each do |goal| %>
-        <div class="goal-edit">
-          <div class="edit">
-            <%= link_to "編集する", edit_main_goal_path(goal.id) %>
-          </div>
-          <div class="destroy">
-            <%= link_to "削除する", main_goal_path(goal.id), method: :delete %>
-          </div>
-        </div>
-        <div class="goal">
-          <div class="goal-content">
-            <div class="main-goal-name">
-            <h1><%= goal.main_goal %></h1>
+    <% end %>
+      <% if @main_goal.present?%>
+        <% @main_goal.each do |goal| %>
+          <div class="goal-edit">
+            <div class="edit">
+              <%= link_to "編集する", edit_main_goal_path(goal.id) %>
             </div>
-            <div class="main-goal-explnation ">
-            <p><%= goal.explnation %></p>
+            <div class="destroy">
+              <%= link_to "削除する", main_goal_path(goal.id), method: :delete %>
             </div>
-            <div class="sub-goals">
-              <div class="sub-goals-contents">
-                <%@sub_goal.each do |sub_goal|%>
-                  <div class="sub-goal">
-                    <div class="sub-goal-edit">
-                      <%= link_to "編集する", edit_main_goal_sub_goal_path(goal.id, sub_goal.id)%> 
+          </div>
+          <div class="goal">
+            <div class="goal-content">
+              <div class="main-goal-name">
+              <h1><%= goal.main_goal %></h1>
+              </div>
+              <div class="main-goal-explnation ">
+              <p><%= goal.explnation %></p>
+              </div>
+              <div class="sub-goals">
+                <div class="sub-goals-contents">
+                  <%@sub_goal.each do |sub_goal|%>
+                    <div class="sub-goal">
+                      <div class="sub-goal-edit">
+                        <%= link_to "編集する", edit_main_goal_sub_goal_path(goal.id, sub_goal.id)%> 
+                      </div>
+                      <div class="sub-goal-name">
+                        <%= sub_goal.sub_goal %>
+                      </div>
+                      <div class="sub-goal-limit">
+                        <%= "残り#{(sub_goal.dead_line-Date.today).to_i}日！！"%>
+                      </div>
                     </div>
-                    <div class="sub-goal-name">
-                      <%= sub_goal.sub_goal %>
-                    </div>
-                    <div class="sub-goal-limit">
-                      <%= "残り#{(sub_goal.dead_line-Date.today).to_i}日！！"%>
-                    </div>
-                  </div>
-                <% end %>
-                <%=link_to "サブ目標を追加する", new_main_goal_sub_goal_path(goal.id), id:"sub-goal-add-btn"%>
+                  <% end %>
+                  <%=link_to "サブ目標を追加する", new_main_goal_sub_goal_path(goal.id), id:"sub-goal-add-btn"%>
+                </div>
+              </div>
+            </div>
+            <div class="limit">
+              <div class="goal-limit">
+              <h2>残り</h2>
+              <h1><%= "#{(goal.dead_line - Date.today).to_i}日！！" %> </h1>
               </div>
             </div>
           </div>
-          <div class="limit">
-            <div class="goal-limit">
-            <h2>残り</h2>
-            <h1><%= "#{(goal.dead_line - Date.today).to_i}日！！" %> </h1>
-            </div>
-          </div>
+        <% end %>
+      <%else%>
+        <h1 class="message">さぁ目標を決めよう！！</h1>
+      <%end%>
+        <div class="goal-set">
+          <%=link_to "目標を追加する", new_main_goal_path %>
         </div>
-      <% end %>
     <%else%>
-      <h1 class="message">さぁ目標を決めよう！！</h1>
-    <%end%>
-      <div class="goal-set">
-        <%=link_to "目標を追加する", new_main_goal_path %>
-      </div>
-  <%else%>
-    <h1 class="message">ログインして仲間になろう！！</h1>
+      <h1 class="message">ログインして仲間になろう！！</h1>
   <%end%>
 </div>
 <%= render "shared/footer" %>
