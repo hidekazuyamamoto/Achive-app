@@ -4,7 +4,7 @@ class CreateSubGoals < ActiveRecord::Migration[6.0]
 
       t.timestamps
       t.string :sub_goal, nill: false
-      t.date :dead_line
+      t.datetime :dead_line
       t.references :user, nill:false, foreign_key: true
       t.references :main_goal, nill:false, foreign_key: true
     end
