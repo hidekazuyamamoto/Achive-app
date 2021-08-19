@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2021_08_18_004414) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "main_goal"
     t.text "explnation"
-    t.date "dead_line"
+    t.datetime "dead_line"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_main_goals_on_user_id"
   end
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2021_08_18_004414) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "sub_goal"
-    t.date "dead_line"
+    t.datetime "dead_line"
     t.bigint "user_id"
     t.bigint "main_goal_id"
     t.index ["main_goal_id"], name: "index_sub_goals_on_main_goal_id"
