@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 <div class="main">
   <div class= new-main>
-    <%=form_with model: [@main_goal,@sub_goal] do |f|%>
+    <%=form_with model: [@main_goal, @sub_goal] do |f|%>
       <p>目標</p>
       <div class="main-goal">
         <%= f.text_area :sub_goal, placeholder:"目標を書こう！！", class:"input-form name"%>
@@ -9,13 +9,13 @@
       <p>締め切り</p>
       <p><span>(右のアイコンをクリック)</span></p>
       <div class="main-goal">
-        <%= f.date_field :dead_line, class:"input-form dead-line"%>
+        <%= f.datetime_field :dead_line, class:"input-form dead-line"%>
       </div>
       <div class="sub-goal-set-btn">
-      <%=link_to "削除する",  main_goal_sub_goal_path(@main_goal, @sub_goal),id:"destroy-btn",method: :delete%>
-      <%= f.submit "目標設定！！" ,class:"set-btn" %>
+        <%= f.submit "目標設定！！" ,class:"set-btn" %>
       </div>
     <%end%>
+    <%=link_to "削除する",  main_goal_sub_goal_path(@main_goal, @sub_goal),id:"destroy-btn",method: :delete%>
   </div>
 </div>
 <%= render "shared/footer" %>

@@ -75,7 +75,7 @@
               <%= link_to "編集する", edit_main_goal_path(goal.id) %>
             </div>
             <div class="destroy">
-              <%= link_to "削除する", main_goal_path(goal.id), method: :delete %>
+              <%= link_to "達成した！！", main_goal_path(goal.id), method: :delete %>
             </div>
           </div>
           <div class="goal">
@@ -91,14 +91,14 @@
                   <%@sub_goal.each do |sub_goal|%>
                     <div class="sub-goal">
                       <div class="sub-goal-edit">
-                        <%= link_to "編集する", edit_main_goal_sub_goal_path(goal.id, sub_goal.id)%> 
+                        <%=link_to "達成した！！",  main_goal_sub_goal_path(goal.id, sub_goal.id),method: :delete%>
                       </div>
                       <div class="sub-goal-name">
                         <%= sub_goal.sub_goal %>
                       </div>
                       <div class="sub-goal-limit">
                         <%= "残り
-                        #{((sub_goal.dead_line-DateTime.now).to_i/( 1000 * 24 * 60 * 60 )).floor}
+                        #{((sub_goal.dead_line-DateTime.now).to_i/(24*60*60)).floor}
                         日！！"%>
                       </div>
                     </div>

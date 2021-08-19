@@ -17,11 +17,8 @@ class SubGoalsController < ApplicationController
   def update
     @main_goal = MainGoal.find(params[:main_goal_id])
     @sub_goal = SubGoal.find(params[:id])
-    if @sub_goal.update(params_sub_goal)
-      redirect_to main_goal_path(current_user.id)
-    else
-      render :edit
-    end
+    @sub_goal.update(params_sub_goal)
+    redirect_to main_goal_path(current_user.id)
   end
   def destroy
     @main_goal = MainGoal.find(params[:main_goal_id])
