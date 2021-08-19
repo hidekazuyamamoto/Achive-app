@@ -14,10 +14,12 @@ function limit_date_calc (limit){
   }
 
 function set_time(){
+  if (document.getElementById("goal-limit")!=null){
   let dead_line = document.getElementById("goal-limit")
   let dead_line_time = new Date(dead_line.innerHTML)
   limit_date_calc(dead_line_time)
   setInterval(limit_date_calc,1000,dead_line_time)
+  }
 }
 
 window.addEventListener('load',set_time);

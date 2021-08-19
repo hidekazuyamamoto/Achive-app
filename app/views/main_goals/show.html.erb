@@ -97,7 +97,9 @@
                         <%= sub_goal.sub_goal %>
                       </div>
                       <div class="sub-goal-limit">
-                        <%= "残り#{sub_goal.dead_line}日！！"%>
+                        <%= "残り
+                        #{((sub_goal.dead_line-DateTime.now).to_i/( 1000 * 24 * 60 * 60 )).floor}
+                        日！！"%>
                       </div>
                     </div>
                   <% end %>
