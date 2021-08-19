@@ -18,7 +18,7 @@
                       <%= sub_goal.sub_goal %>
                     </div>
                     <div class="sub-goal-limit">
-                      <%= "残り#{sub_goal.dead_line}日！！"%>
+                      <%= "残り#{((sub_goal.dead_line-DateTime.now).to_i/(24*60*60)).floor}日！！"%>
                     </div>
                   </div>
                 <% end %>
@@ -34,12 +34,14 @@
         </div>
       <% end %>
     <%else%>
-      <h1 class="message">さぁ目標を決めよう！！</h1>
-      <div class="goal-set">
+      <div class="goal-set-none">
+        <h1 class="message">さぁ目標を決めよう！！</h1>
         <%=link_to "目標を設定する", new_main_goal_path %>
       </div>
     <%end%>
   <%else%>
-    <h1 class="message">ログインして仲間になろう！！</h1>
+    <div class="goal-set-none">
+      <h1 class="message">ログインして仲間になろう！！</h1>
+      </div>
   <%end%>
 </div>

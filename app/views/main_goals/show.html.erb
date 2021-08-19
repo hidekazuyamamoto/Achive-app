@@ -58,7 +58,6 @@
             </div>
             <div class="life-goal-explanation">
               <p class="life-goal-explanation-content">
-              詳しく教えて！！
               </p>
             </div>
           </div>
@@ -70,14 +69,6 @@
     <% end %>
       <% if @main_goal.present?%>
         <% @main_goal.each do |goal| %>
-          <div class="goal-edit">
-            <div class="edit">
-              <%= link_to "編集する", edit_main_goal_path(goal.id) %>
-            </div>
-            <div class="destroy">
-              <%= link_to "達成した！！", main_goal_path(goal.id), method: :delete %>
-            </div>
-          </div>
           <div class="goal">
             <div class="goal-content">
               <div class="main-goal-name">
@@ -112,6 +103,14 @@
               <h2>残り</h2>
               <h1 id= "goal-limit" ><%= "#{goal.dead_line}" %> </h1>
               </div>
+            </div>
+          </div>
+          <div class="goal-edit">
+            <div class="edit">
+              <%= link_to "編集する", edit_main_goal_path(goal.id) %>
+            </div>
+            <div class="destroy">
+              <%= link_to "達成した！", main_goal_path(goal.id), method: :delete %>
             </div>
           </div>
         <% end %>

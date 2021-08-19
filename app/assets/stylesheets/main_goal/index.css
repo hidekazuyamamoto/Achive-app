@@ -84,23 +84,21 @@
   padding-bottom: 30px;
 }
 .goal{
-  border: 3px solid black;
+  border: 1px solid black;
   width: 90%;
   margin:0 auto 20px;
-  background-color: darkcyan;
   display: flex;
 }
 .goal-content{
   width: 70%;
   margin: 20px;
-  background-color: royalblue;
 }
 .main-goal-name{
   height: 65px;
   width: 95%;
   margin: 20px;
-  background-color: orchid;
-  
+  background-color: rgb(235, 205, 234);
+  border: 3px solid black;
 }
 .main-goal-name h1{
   margin: 0px;
@@ -110,7 +108,7 @@
 .main-goal-explnation{
   width: 95%;
   margin: 20px;
-  background-color:khaki;
+  background-color:rgb(255, 252, 232);
 }
 .hidden{
   display: none;
@@ -123,12 +121,11 @@
   overflow-wrap: break-word;
 }
 .sub-goals{
-  width: 100%;
-  background-color: lemonchiffon;
+  width: 95%;
+  margin: 20px;
 }
 .sub-goals-contents{
   width: 100%;
-  background-color: lightcoral;
   margin:0 0 0 auto ;
   padding-top:5px ;
 }
@@ -147,7 +144,8 @@
   font-weight: 600;
 }
 .sub-goal-name{
-  width: 70%;
+  margin-left:10px ;
+  width: 60%;
   font-weight: 900;
   font-size: 30px;
 }
@@ -161,19 +159,18 @@
   text-decoration: none;
   border: 1px solid black;
   margin: 0 230px ;
-  background-color: gray;
+  background-color: rgb(207, 207, 207);
 }
 .limit{
   height: 40%;
   width: 30%;
-  background-color: orange;
+  background-color: rgb(255, 245, 227);
   margin: 20px;
 }
 .goal-limit{
   height: 90%;
   width: 90%;
   margin: 10px auto;
-  background-color: blue;
 }
 .goal-limit h2{
   margin: 0px;
@@ -213,4 +210,16 @@
 }
 .footer p{
   margin-top: 0px;
+}
+.goal-set-none{
+  height: 500px;
+  text-align: center;
+}
+.goal-set-none a{
+  text-align: center;
+  font-size: 30px;
+  border: 1px solid black;
+  background-color: rgb(233, 231, 231);
+  height: 50px;
+  text-decoration: none;
 }
